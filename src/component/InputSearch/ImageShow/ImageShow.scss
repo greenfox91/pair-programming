@@ -1,6 +1,16 @@
+@font-face {
+  font-family: "CaveatBold";
+  src: url(../../../assets/Font/Caveat/Caveat-Bold.ttf);
+};
+
+
 .text-output {
   font-size: 20px;
   text-align: center;
+      font-family: "CaveatBold";
+  font-style: bold;
+
+
 }
 
 .image-output {
