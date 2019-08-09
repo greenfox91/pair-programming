@@ -1,5 +1,4 @@
 import React from 'react';
-import './ImageShow.scss'
 
 class ImageShow extends React.Component {
     
