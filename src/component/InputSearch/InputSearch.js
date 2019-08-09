@@ -57,31 +57,40 @@ class InputSearch extends React.Component {
 	}
 
 	handleFocus = (event) => {
-		this.setState({ value: '', arrayOfBoth: [] })
+		this.setState({ value: '', arrayOfBoth: [], alert: !this.state.alert })
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault()
 	}
-	
-	
+	alertController = () => {
+		this.setState({ alert: !this.state.alert });
+	  }
+	  alertText= () => {
+		if (this.state.alert) {
+				 return(<p className='container__alert'>Please enter only real words</p>)
+			 }
+	  }
 	
 	
 	render () {
 		return (
 			<>
 			<div className="container">
-			<input className="container__input-text" 
-					type='text' 
-					name='inputText' 
-					placeholder="Search" 
-					outline="none" 
-					value={this.state.value} 
-					onChange={this.onChange} 
-					onKeyDown={this.onKeyEvent} 
-					onFocus={this.handleFocus} 
-			/>
-
+				<h1 className="container__title">this.yourWords.gif</h1>
+				<input
+           className='container__input-text'
+           type='text'
+           name='inputText'
+           placeholder='Enter a sentence'
+           outline='none'
+           value={this.state.value}
+           onChange={this.onChange}
+           onKeyDown={this.onKeyEvent}
+           onFocus={this.handleFocus}
+           onBlur={this.alertController}
+         />
+                    {this.alertText()}
 			</div>
 			<ul className="gif-wrapper">
 			{
