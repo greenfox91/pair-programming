@@ -14,6 +14,7 @@ class InputSearch extends React.Component {
     return lastWord[lastWord.length - 1];
   }
 
+
   getGif = query => {
     axios
       .get(
@@ -24,7 +25,8 @@ class InputSearch extends React.Component {
 
         let bothToStore = this.state.arrayOfBoth;
 
-        let urlToStore = resp.data.data[0].images.original.url;
+				let randomGif = Math.floor(Math.random() * Math.floor(25));
+        let urlToStore = resp.data.data[randomGif].images.original.url;
 
         bothToStore.push({
           word: lastWord,
